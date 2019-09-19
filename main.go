@@ -1,9 +1,11 @@
 package main
 
 import (
+	"fmt"
 	"github.com/kataras/iris"
 	"github.com/kataras/iris/middleware/logger"
 	"github.com/kataras/iris/middleware/recover"
+	"iris-demo/route"
 	"iris-demo/utils"
 )
 
@@ -15,6 +17,10 @@ func main() {
 	app.Use(logger.New())
 
 	config, _ := utils.GetYaml()
+
+	route.Configure(app)
+
+	fmt.Println(config.Mysql)
 
 	app.Run(
 		iris.Addr(":"+config.Server.Port),

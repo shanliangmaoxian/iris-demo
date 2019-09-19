@@ -30,7 +30,7 @@ func InstanceMaster() *xorm.Engine {
 
 	config, _ := utils.GetYaml()
 	c := config.Mysql
-	driverSource := fmt.Sprintf("%s:%s@tcp(%s:%d)/%s?charset=utf8",
+	driverSource := fmt.Sprintf("%s:%s@tcp(%s:%s)/%s?charset=utf8",
 		c.User, c.Pwd, c.Host, c.Port, c.Dbname)
 	engine, err := xorm.NewEngine(conf.DriverName, driverSource)
 	if err != nil {
