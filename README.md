@@ -30,6 +30,14 @@ go build iris-demo
 
 ### 2019-09-19
 1. 增加user 增删改查接口
+```
+[DBUG] 2019/09/19 13:20 DELETE: /user -> controllers.UserController.Delete() and 2 more
+[DBUG] 2019/09/19 13:20 GET: /user/all -> controllers.UserController.GetAll() and 2 more
+[DBUG] 2019/09/19 13:20 GET: /user -> controllers.UserController.Get() and 2 more
+[DBUG] 2019/09/19 13:20 POST: /user/edit -> controllers.UserController.PostEdit() and 2 more
+[DBUG] 2019/09/19 13:20 POST: /user/save -> controllers.UserController.PostSave() and 2 more
+```
+
 
 ### 2019-09-18
 1. 代码上传
