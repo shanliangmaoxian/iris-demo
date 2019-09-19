@@ -21,3 +21,8 @@ func (d *UserDao) GetAll() []models.User {
 		return datalist
 	}
 }
+
+func (d *UserDao) Create(data *models.User) error {
+	_, err := d.engine.Insert(data)
+	return err
+}

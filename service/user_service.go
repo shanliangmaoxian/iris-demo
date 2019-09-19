@@ -8,6 +8,7 @@ import (
 
 type UserService interface {
 	GetAll() []models.User
+	Create(user *models.User) error
 }
 
 type userService struct {
@@ -22,4 +23,8 @@ func NewUserService() *userService {
 
 func (s *userService) GetAll() []models.User {
 	return s.repo.GetAll()
+}
+
+func (s *userService) Create(data *models.User) error {
+	return s.repo.Create(data)
 }
